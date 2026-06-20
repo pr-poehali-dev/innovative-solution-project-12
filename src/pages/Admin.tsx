@@ -1,28 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
 const API_URL = "https://functions.poehali.dev/1149d9f1-c3d9-426f-b933-7c42ab7c57a1";
+const STORAGE_KEY = "happ_admin_secret";
 
 export default function Admin() {
-  const [secret, setSecret] = useState("");
+  const [secret, setSecret] = useState(localStorage.getItem(STORAGE_KEY) ?? "");
   const [authed, setAuthed] = useState(false);
   const [authError, setAuthError] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) login(saved);
+  }, []);
   const [keysText, setKeysText] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<{ added: number; remaining: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const login = async () => {
+  const login = async (pwd?: string) => {
+    const pass = pwd ?? secret;
     setAuthError(false);
     const res = await fetch(API_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "X-Admin-Secret": secret },
+      headers: { "Content-Type": "application/json", "X-Admin-Secret": pass },
       body: JSON.stringify({ keys: [] }),
     });
     if (res.status === 403) {
-      setAuthError(true);
+      if (!pwd) setAuthError(true);
+      localStorage.removeItem(STORAGE_KEY);
     } else {
       setAuthed(true);
+      localStorage.setItem(STORAGE_KEY, pass);
     }
   };
 
