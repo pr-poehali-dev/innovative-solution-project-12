@@ -15,7 +15,9 @@ export default function Header({ className }: HeaderProps) {
             Возможности
           </a>
           <a
-            href="#key"
+            href="https://t.me/Happ_Free_keys"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white hover:text-neutral-400 transition-colors duration-300 uppercase text-sm"
           >
             Получить ключ

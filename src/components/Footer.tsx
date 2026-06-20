@@ -17,7 +17,9 @@ export default function Footer() {
                   Возможности
                 </a>
                 <a
-                  href="#key"
+                  href="https://t.me/Happ_Free_keys"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
                 >
                   Получить ключ
@@ -44,7 +46,9 @@ export default function Footer() {
                   Инструкция
                 </a>
                 <a
-                  href="#telegram"
+                  href="https://t.me/Happ_Free_keys"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
                 >
                   Telegram

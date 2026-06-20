@@ -14,8 +14,13 @@ export default function Featured() {
           Полный доступ ко всем возможностям Happ без оплаты. Активация за минуту, без скрытых условий —
           просто бери ключ и пользуйся.
         </p>
-        <a href="#key" className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide">
-          Получить ключ
+        <a
+          href="https://t.me/Happ_Free_keys"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide"
+        >
+          Получить ключ в Telegram
         </a>
       </div>
     </div>
