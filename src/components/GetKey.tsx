@@ -79,21 +79,18 @@ export default function GetKey() {
           </button>
         ) : (
           <div className="flex flex-col items-center gap-4 w-full">
-            <div className="glass rounded-2xl px-8 py-6 flex items-center gap-5 w-full justify-between">
-              <span className="text-xl md:text-2xl font-mono font-bold tracking-widest text-white">
+            <div className="glass rounded-2xl px-6 py-5 flex flex-col gap-4 w-full">
+              <span className="text-base md:text-xl font-mono font-bold text-white break-all leading-relaxed text-center">
                 {key}
               </span>
               <button
                 onClick={copyKey}
-                className="glass-btn rounded-xl p-3 text-white transition-all"
-                title="Скопировать"
+                className="glass-btn rounded-xl py-3 px-6 text-white flex items-center justify-center gap-2 font-semibold text-sm uppercase tracking-widest w-full"
               >
                 <Icon name={copied ? "Check" : "Copy"} size={18} />
+                {copied ? "Скопировано!" : "Скопировать"}
               </button>
             </div>
-            <p className="text-white/40 text-sm">
-              {copied ? "Скопировано!" : "Нажми на иконку, чтобы скопировать"}
-            </p>
           </div>
         )}
 
