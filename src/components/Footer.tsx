@@ -6,60 +6,51 @@ export default function Footer() {
     >
       <div className="relative h-[calc(100vh+400px)] sm:h-[calc(100vh+600px)] lg:h-[calc(100vh+800px)] -top-[100vh]">
         <div className="h-[400px] sm:h-[600px] lg:h-[800px] sticky top-[calc(100vh-400px)] sm:top-[calc(100vh-600px)] lg:top-[calc(100vh-800px)]">
-          <div className="bg-neutral-900 py-4 sm:py-6 lg:py-8 px-4 sm:px-6 h-full w-full flex flex-col justify-between">
-            <div id="key" className="flex shrink-0 gap-8 sm:gap-12 lg:gap-20">
-              <div className="flex flex-col gap-1 sm:gap-2">
-                <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">Happ</h3>
-                <a
-                  href="#features"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Возможности
-                </a>
-                <a
-                  href="https://t.me/Happ_Free_keys"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Получить ключ
-                </a>
-                <a
-                  href="#contact"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Связаться
-                </a>
-              </div>
-              <div className="flex flex-col gap-1 sm:gap-2">
-                <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">Поддержка</h3>
-                <a
-                  href="#faq"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Вопросы
-                </a>
-                <a
-                  href="#guide"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Инструкция
-                </a>
+          <div
+            className="py-8 px-6 h-full w-full flex flex-col justify-between"
+            style={{
+              background: "linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0d0d0d 100%)"
+            }}
+          >
+            <div className="flex shrink-0 gap-8 sm:gap-12 lg:gap-20">
+              <div className="flex flex-col gap-2">
+                <h3 className="mb-2 uppercase text-white/30 text-xs tracking-widest">Happ</h3>
+                <a href="#features" className="text-white/60 hover:text-white transition-colors text-sm">Возможности</a>
+                <a href="#get-key" className="text-white/60 hover:text-white transition-colors text-sm">Получить ключ</a>
                 <a
                   href="https://t.me/Happ_Free_keys"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
+                  className="text-white/60 hover:text-white transition-colors text-sm"
                 >
                   Telegram
                 </a>
               </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="mb-2 uppercase text-white/30 text-xs tracking-widest">Поддержка</h3>
+                <a
+                  href="https://t.me/Happ_Free_keys"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-white transition-colors text-sm"
+                >
+                  Написать в Telegram
+                </a>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-0">
-              <h1 className="text-[18vw] sm:text-[16vw] lg:text-[14vw] leading-[0.8] mt-4 sm:mt-6 lg:mt-10 text-white font-bold tracking-tight">
+
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+              <h1 className="text-[18vw] sm:text-[16vw] lg:text-[14vw] leading-[0.8] mt-6 font-bold tracking-tight"
+                style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 HAPP
               </h1>
-              <p className="text-white text-sm sm:text-base">{new Date().getFullYear()} Happ</p>
+              <p className="text-white/30 text-sm">{new Date().getFullYear()} Happ</p>
             </div>
           </div>
         </div>

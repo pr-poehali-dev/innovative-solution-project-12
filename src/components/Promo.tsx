@@ -7,7 +7,7 @@ export default function Promo() {
     target: container,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["-10vh", "10vh"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-8vh", "8vh"]);
 
   return (
     <div
@@ -16,23 +16,35 @@ export default function Promo() {
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
-        <motion.div style={{ y }} className="relative w-full h-full">
+        <motion.div style={{ y }} className="relative w-full h-full will-change-transform">
           <img
             src="/images/spiral-circles.jpg"
-            alt="Abstract spiral circles"
+            alt="Abstract spiral"
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
+          <div className="absolute inset-0 bg-black/50" />
         </motion.div>
       </div>
 
-      <h3 className="absolute top-12 right-6 text-white uppercase z-10 text-sm md:text-base lg:text-lg">
-        Как это работает
-      </h3>
-
-      <p className="absolute bottom-12 right-6 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-5xl z-10">
-        Нажми «Получить ключ», скопируй его и активируй в приложении Happ.
-        Никакой оплаты, никаких ограничений — доступ открывается мгновенно.
-      </p>
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-8">
+        <div className="glass rounded-2xl px-6 py-2 inline-block">
+          <span className="text-xs uppercase tracking-[0.3em] text-white/70">Как это работает</span>
+        </div>
+        <p className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          Нажми «Получить ключ», скопируй его и активируй в приложении Happ.
+        </p>
+        <p className="text-white/50 text-lg max-w-xl">
+          Никакой оплаты, никаких ограничений — доступ открывается мгновенно.
+        </p>
+        <a
+          href="#get-key"
+          className="glass-btn text-white px-10 py-4 text-sm uppercase tracking-widest font-semibold rounded-full"
+        >
+          Попробовать сейчас
+        </a>
+      </div>
     </div>
   );
 }
