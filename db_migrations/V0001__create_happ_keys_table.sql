@@ -1,0 +1,7 @@
+CREATE TABLE happ_keys (
+  id SERIAL PRIMARY KEY,
+  key_value TEXT NOT NULL UNIQUE,
+  is_used BOOLEAN NOT NULL DEFAULT FALSE,
+  used_at TIMESTAMP,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
