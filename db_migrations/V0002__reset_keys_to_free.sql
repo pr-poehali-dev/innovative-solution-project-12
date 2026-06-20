@@ -1,0 +1,1 @@
+UPDATE t_p8271709_innovative_solution_.happ_keys SET is_used = FALSE, used_at = NULL;
