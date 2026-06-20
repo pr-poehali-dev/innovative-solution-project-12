@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "name": "GET key - no keys available",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 404,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST without secret - forbidden",
+      "method": "POST",
+      "path": "/",
+      "headers": {"X-Admin-Secret": "wrong"},
+      "body": {"keys": ["TEST-KEY-001"]},
+      "expectedStatus": 403,
+      "bodyMatcher": "partial"
+    }
+  ]
+}
